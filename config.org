@@ -123,8 +123,9 @@ Maximize the frame by default on start-up. Set the font size to 13.
     :ensure nil
     :config
     (setq initial-frame-alist (quote ((fullscreen . maximized))))
-    (when (member "Menlo" (font-family-list))
-      (set-frame-font "menlo-13:weight=regular" t t)))
+    (set-frame-font "iosevka-11"))
+    ;; (when (member "Menlo" (font-family-list))
+    ;; (set-frame-font "menlo-13:weight=regular" t t)))
 #+END_SRC
 ** Ediff tweaks
 Enter ediff with side-by-side buffers to better compare the differences.
