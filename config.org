@@ -166,6 +166,7 @@ I personally find Vi(m) bindings to be the most efficient way of editing text (e
     :diminish undo-tree-mode
     :init
     (setq evil-want-C-u-scroll t)
+    (setq evil-want-fine-undo t)
     (setq evil-shift-width 4)
     :config
     (evil-mode +1)
