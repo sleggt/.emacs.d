@@ -196,6 +196,20 @@ I personally find Vi(m) bindings to be the most efficient way of editing text (e
           dashboard-items nil
           dashboard-set-footer nil))
 #+END_SRC
+** Theme
+#+BEGIN_SRC emacs-lisp
+  (use-package spacemacs-theme
+    :no-require t
+    :ensure t
+    :config (load-theme 'spacemacs-dark))
+
+  (use-package powerline
+    :ensure t)
+  (use-package powerline-evil
+    :ensure t)
+  (powerline-default-theme)
+#+END_SRC
+
 ** Company for auto-completion
 Use ~C-n~ and ~C-p~ to navigate the tooltip
 #+BEGIN_SRC emacs-lisp
