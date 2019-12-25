@@ -38,8 +38,10 @@
 (eval-and-compile
   (setq use-package-always-ensure t))
 
-;; Dump custom-set-variables to a garbage file and don't load it
-(setq custom-file "~/.emacs.d/to-be-dumped.el")
+;; Custom settings in separate file
+(setq custom-file (concat user-emacs-directory "custom.el"))
+(when (file-exists-p custom-file)
+  (load custom-file))
 
 ;; Load theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
