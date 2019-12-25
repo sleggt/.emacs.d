@@ -325,3 +325,21 @@ Some useful but missing major modes
   (use-package highlight-operators :hook (prog-mode . highlight-operators-mode))
   (use-package highlight-escape-sequences :hook (prog-mode . hes-mode))
 #+END_SRC
+** Some key bindings
+Should probably be put with relevant packages, but for now since we did not yet add helm (or ivy) we
+do it here.
+#+BEGIN_SRC emacs-lisp
+  (define-key evil-normal-state-map (kbd "-") 'find-file)
+  (with-eval-after-load 'helm
+    (define-key evil-normal-state-map (kbd "-") 'helm-find-files)
+    (define-key evil-normal-state-map (kbd "_") 'helm-projectile)
+    (define-key evil-normal-state-map (kbd "=") 'helm-recentf)
+    (define-key evil-normal-state-map (kbd ";") 'helm-mini)
+
+    (define-key evil-motion-state-map (kbd "-") 'helm-find-files)
+    (define-key evil-motion-state-map (kbd "_") 'helm-projectile)
+    (define-key evil-motion-state-map (kbd "=") 'helm-recentf)
+    (define-key evil-motion-state-map (kbd ";") 'helm-mini))
+
+
+#+END_SRC
