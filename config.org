@@ -270,14 +270,14 @@ Some minimal org mode tweaks
       (define-key org-mode-map (kbd "C-<tab>") nil))
     ;; Week starts on monday
     (setq calendar-week-start-day 1)
+    (setq org-startup-indented t))
+  (use-package org-bullets
+    :hook (org-mode . org-bullets-mode)
+    :config
     (setq org-bullets-bullet-list
-        '("⊚" "◎" "◉" "⊛" "○" "●"
         ;; "☉" "◎" "◉" "○" "◦" "◯" "⚪" "⚫" "⚬" "❍" "￮" "⊙" "⊚" "⊛" "∙" "∘"
         ;; ♥ ● ◇ ✚ ✜ ☯ ◆ ♠ ♣ ♦ ☢ ❀ ◆ ◖ ▶
-        ))
-    (setq org-startup-indented t)
-    ;; (use-package org-bullets :hook (org-mode . org-bullets-mode))
-    )
+        '("⊚" "◎" "◉" "⊛" "○" "●")))
 
 #+END_SRC
 ** Which-key
